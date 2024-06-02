@@ -1,4 +1,4 @@
-import { ErrorHandler } from '../../Placement_Cell/utils/errorHandler.js';
+import { ErrorHandler } from '../utils/errorHandler.js';
 
 export const errorHandlerMiddleware = (err, req, res, next) => {
   // If err is not an instance of ErrorHandler, treat it as an internal server error

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h2>Students</h2>
+      <a href="/api/placementcell/student/add" class="btn btn-primary mb-3"
+        >Add New Student</a
+      >
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>College</th>
+            <th>Batch</th>
+            <th>Status</th>
+            <th>DSA Score</th>
+            <th>WebD Score</th>
+            <th>React Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% students.forEach(student => { %>
+          <tr>
+            <td><%= student.name %></td>
+            <td><%= student.college %></td>
+            <td><%= student.batch %></td>
+            <td><%= student.status %></td>
+            <td><%= student.dsaScore %></td>
+            <td><%= student.webdScore %></td>
+            <td><%= student.reactScore %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

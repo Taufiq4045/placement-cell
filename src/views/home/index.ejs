@@ -1,0 +1,51 @@
+<div class="container-lpage">
+  <div class="container main">
+    <div class="left p-2">
+      <h1 class="main-heading">Welcome to Placement Cell</h1>
+      <h2 class="text-white ml12">Your Future Starts Here</h2>
+      <h5 class="text-white">Track Interviews, Stay Informed, Get Placed!</h5>
+      <div class="actions">
+        <a href="/api/placementcell/user/register" class="btn btn-lg lbtn">
+          Ceate an account
+        </a>
+        <a
+          href="/api/placementcell/user/login"
+          class="btn btn-lg lbtn"
+          style="margin-left: 1rem"
+        >
+          Login instead
+        </a>
+      </div>
+    </div>
+    <div class="right">
+      <img src="/images/banner.png" alt="banner" />
+    </div>
+  </div>
+</div>
+<script>
+  var textWrapper = document.querySelector('.ml12');
+  textWrapper.innerHTML = textWrapper.textContent.replace(
+    /\S/g,
+    "<span class='letter'>$&</span>"
+  );
+
+  anime
+    .timeline({ loop: true })
+    .add({
+      targets: '.ml12 .letter',
+      translateX: [40, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      duration: 1200,
+      delay: (el, i) => 500 + 30 * i,
+    })
+    .add({
+      targets: '.ml12 .letter',
+      translateX: [0, -30],
+      opacity: [1, 0],
+      easing: 'easeInExpo',
+      duration: 1100,
+      delay: (el, i) => 100 + 30 * i,
+    });
+</script>

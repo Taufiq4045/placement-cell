@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h2>Add Interview</h2>
+      <form action="/api/placementcell/interview/add" method="POST">
+        <div class="mb-3">
+          <label for="company" class="form-label">Company</label>
+          <input
+            type="text"
+            class="form-control"
+            id="company"
+            name="company"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="date"
+            name="date"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Interview</button>
+      </form>
+    </div>
+  </div>
+</div>

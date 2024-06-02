@@ -1,0 +1,43 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h2>Allocate Student to Interview</h2>
+      <form action="/api/placementcell/interview/allocate" method="POST">
+        <div class="mb-3">
+          <label for="interviewId" class="form-label">Interview</label>
+          <select
+            class="form-control"
+            id="interviewId"
+            name="interviewId"
+            required
+          >
+            <% interviews.forEach(interview => { %>
+            <option value="<%= interview._id %>">
+              <%= interview.company %> - <%= new
+              Date(interview.date).toLocaleDateString() %>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="studentId" class="form-label">Student</label>
+          <select class="form-control" id="studentId" name="studentId" required>
+            <% students.forEach(student => { %>
+            <option value="<%= student._id %>"><%= student.name %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="result" class="form-label">Result</label>
+          <select class="form-control" id="result" name="result" required>
+            <option value="PASS">PASS</option>
+            <option value="FAIL">FAIL</option>
+            <option value="On Hold">On Hold</option>
+            <option value="Didn’t Attempt">Didn’t Attempt</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Allocate</button>
+      </form>
+    </div>
+  </div>
+</div>
